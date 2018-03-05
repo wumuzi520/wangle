@@ -9,7 +9,7 @@ cmake_minimum_required(VERSION 2.8)
 
 add_compile_options(-std=c++1y)
 add_compile_options(-fPIC)
-set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake/)
 
 # When installing Folly & Wangle in a non-default prefix, this will let
 # projects linking against libwangle.so to find libfolly.so automatically.
@@ -24,7 +24,7 @@ find_package(Boost REQUIRED COMPONENTS system thread filesystem regex context)
 find_package(OpenSSL REQUIRED)
 find_package(Glog REQUIRED)
 find_package(Gflags REQUIRED)
-find_package(Libevent REQUIRED)
+find_package(LibEvent REQUIRED)
 find_package(DoubleConversion REQUIRED)
 find_package(Threads REQUIRED)
 find_package(Libdl)
@@ -32,7 +32,7 @@ if (UNIX AND NOT APPLE)
   find_package(Librt)
 endif()
 
-include(CheckAtomic)
+#include(CheckAtomic)
 
 include_directories(
   ${CMAKE_SOURCE_DIR}/..
