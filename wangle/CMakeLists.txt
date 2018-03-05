@@ -35,7 +35,7 @@ endif()
 #include(CheckAtomic)
 
 include_directories(
-  ${CMAKE_SOURCE_DIR}/..
+  ${CMAKE_SOURCE_DIR}
   ${FOLLY_INCLUDE_DIR}
   ${Boost_INCLUDE_DIR}
   ${OPENSSL_INCLUDE_DIR}
